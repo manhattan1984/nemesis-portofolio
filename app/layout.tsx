@@ -20,10 +20,12 @@ export default function RootLayout({
           showMenu ? "overflow-hidden" : ""
         } bg-orange-50 font-clash bg-cover bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid.svg')]`}
       >
-        <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
-        <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
+        <div className="bg-[url('https://www.jobenetuk.dev/grain.5ba829e5.svg')]">
+          <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+          <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
 
-        {children}
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

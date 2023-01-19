@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "context/CartContext.js", "app/page.jsx", "app/products/page.jsx"  ],
+, "context/CartContext.js", "app/page.jsx", "app/products/page.jsx", "app/works/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

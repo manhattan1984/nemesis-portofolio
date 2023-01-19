@@ -20,9 +20,11 @@ const Navbar = ({
       <nav
         className={`flex justify-between ${
           showMenu ? "" : "bg-slate-50"
-        } bg-opacity-25 text-4xl z-10 p-4`}
+        } bg-opacity-25 text-3xl z-10 p-4`}
       >
-        <p>JM</p>
+        <Link href="/" className="font-clashBold">
+          JM
+        </Link>
         {showMenu ? (
           <AiOutlineClose onClick={handleMenu} />
         ) : (
