@@ -7,7 +7,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import ColorModeProvider from "../context/ColorMode";
-import {ThemeProvider} from "next-themes"
+import { ThemeProvider } from "next-themes";
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -26,9 +26,10 @@ export default function RootLayout({
         bg-orange-50 dark:bg-neutral-900
         ${
           showMenu ? "overflow-hidden" : ""
-        }  font-clash bg-cover bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid.svg')]`}
+        }  font-clash bg-cover dark:bg-url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid-white.svg')
+         bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid.svg')]`}
         >
-          <div className="bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grain.svg')]">
+          <div className="bg-cover bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grain.svg')]">
             <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
             <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
 

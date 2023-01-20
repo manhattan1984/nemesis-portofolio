@@ -18,21 +18,21 @@ const About = () => {
           <p className="text-3xl text-center text-red-500 mt-4">Top G</p>
         </div>
       </div>
-      <div className="h-[50vh] flex flex-col text-lg gap-2 mx-8">
-        <p>
+      <div className="h-[50vh] flex flex-col text-lg gap-2 mx-8 max-w-md">
+        <m.p animate={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 0.5, duration: 0.5}}>
           I am a Web Developer and Artist working on beautiful projects all the
           time, and I am constantly looking for ways to make a million dollars.
-        </p>
-        <p>
+        </m.p>
+        <m.p animate={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 0.5, duration: 0.5}}>
           I've been a part of this industry for over two years and within those
           years, I've worked on many projects and each new project is an
           improvement on the last.
-        </p>
-        <p>
+        </m.p>
+        <m.p animate={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 0.5, duration: 0.5}}>
           My confusion came from I could be great at any thing, so the hard part
-          was picking what to be great at. The great is All To Each, not Each To
-          All.
-        </p>
+          was picking what to be great at. The great man is "All To Each, not Each To
+          All".
+        </m.p>
       </div>
       <Footer />
     </m.div>

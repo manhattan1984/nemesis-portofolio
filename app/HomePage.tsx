@@ -22,7 +22,7 @@ type HomePageProps = {
 };
 
 export default function HomePage({ works }: HomePageProps) {
-  const {theme, setTheme} = useTheme()
+  const { theme, setTheme } = useTheme();
   return (
     <m.div
       initial={{ y: "100%" }}
@@ -51,7 +51,11 @@ export default function HomePage({ works }: HomePageProps) {
             </div>
             <div className="text-right">
               <p>Available for freelance work</p>
-              <Link href="#" className="uppercase underline font-bold">
+              <Link
+                href="https://wa.me/+2348125365368"
+                passHref={true}
+                className="uppercase underline font-bold"
+              >
                 Let's Talk.
               </Link>
             </div>
@@ -62,7 +66,7 @@ export default function HomePage({ works }: HomePageProps) {
         <m.p
           animate={{ y: "100%", opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1.2 }}
+          transition={{ delay: 0, duration: 0.5 }}
           className="text-2xl tracking-wide"
         >
           Hi, Michael here. <br /> <br /> I am a web developer and an artist and
@@ -79,7 +83,9 @@ export default function HomePage({ works }: HomePageProps) {
         </m.p>
       </section>
       <section className="">
-        <p className="font-clashBold text-7xl text-center mb-10">Featured Works</p>
+        <p className="font-clashBold text-7xl text-center mb-10">
+          Featured Works
+        </p>
         <div className="mx-8">
           {works.map((work, index) => (
             <div

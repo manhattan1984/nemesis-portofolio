@@ -55,12 +55,20 @@ const Menu = ({
 
         <div className="">
           <p>Want to Start a Project?</p>
-          <p>Let's talk</p>
+          <Link
+            href="https://wa.me/+2348125365368"
+            passHref={true}
+            className="underline"
+          >
+            <p>Let's talk</p>
+          </Link>
         </div>
 
-        <div className="">
+        <div className="flex justify-between w-full">
           <p>Contact me on whatsapp</p>
-          <p>Github</p>
+          <Link passHref href="https://github.com/manhattan1984">
+            <p>Github</p>
+          </Link>
         </div>
       </div>
     </div>
