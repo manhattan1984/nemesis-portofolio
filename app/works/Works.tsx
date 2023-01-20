@@ -1,13 +1,22 @@
+"use client";
 import React from "react";
 import Work from "../../components/Work";
 import { Work as WorkType } from "../HomePage";
+import { motion as m } from "framer-motion";
+import Footer from "../../components/Footer";
 
 type WorksProps = {
   works: WorkType[];
 };
 const Works = ({ works }: WorksProps) => {
   return (
-    <div className="h-screen w-[85%] mx-auto my-auto">
+    <m.div
+      initial={{ y: "100%" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      exit={{ opacity: 1 }}
+      className="mx-auto my-auto absolute top-0 left-0 h-full w-full"
+    >
       <p className="text-center font-clashBold text-6xl my-16">Works</p>
       {works.map((work, index) => (
         <div
@@ -22,7 +31,8 @@ const Works = ({ works }: WorksProps) => {
           <Work {...work} key={index} />
         </div>
       ))}
-    </div>
+      <Footer />
+    </m.div>
   );
 };
 

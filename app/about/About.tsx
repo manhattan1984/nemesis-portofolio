@@ -1,8 +1,17 @@
+"use client";
 import React from "react";
+import { motion as m } from "framer-motion";
+import Footer from "../../components/Footer";
 
 const About = () => {
   return (
-    <div>
+    <m.div
+      initial={{ y: "100%" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      exit={{ opacity: 1 }}
+      className="absolute top-0 left-0 h-full w-full"
+    >
       <div className="font-clashBold text-center h-screen flex flex-col justify-center">
         <div className="h-1/2 my-auto">
           <p className="text-7xl text-center">Jackson Michael</p>
@@ -25,7 +34,8 @@ const About = () => {
           All.
         </p>
       </div>
-    </div>
+      <Footer />
+    </m.div>
   );
 };
 

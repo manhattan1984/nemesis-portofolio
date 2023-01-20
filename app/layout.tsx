@@ -4,6 +4,10 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import ColorModeProvider from "../context/ColorMode";
+import {ThemeProvider} from "next-themes"
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -14,20 +18,24 @@ export default function RootLayout({
 }) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${
+    <html lang="en" className="dark">
+      <ThemeProvider attribute="class">
+        <body
+          className={`
+        overflow-x-hidden 
+        bg-orange-50 dark:bg-neutral-900
+        ${
           showMenu ? "overflow-hidden" : ""
-        } bg-orange-50 font-clash bg-cover bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid.svg')]`}
-      >
-        <div className="bg-[url('https://www.jobenetuk.dev/grain.5ba829e5.svg')]">
-          <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
-          <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
+        }  font-clash bg-cover bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grid.svg')]`}
+        >
+          <div className="bg-[url('https://woakwmdkqyfsikmmcwvu.supabase.co/storage/v1/object/public/portofolio/grain.svg')]">
+            <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+            <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
 
-          {children}
-        </div>
-        <Footer />
-      </body>
+            <AnimatePresence mode="wait">{children}</AnimatePresence>
+          </div>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

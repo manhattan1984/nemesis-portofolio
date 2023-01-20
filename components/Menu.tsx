@@ -37,9 +37,9 @@ const Menu = ({
     <div
       className={`${
         showMenu ? "block" : "hidden"
-      } fixed h-screen w-full bg-white`}
+      } fixed h-screen w-full bg-white dark:bg-neutral-900 z-50`}
     >
-      <div className="flex flex-col items-center justify-around text-center h-5/6 bg-orange-100">
+      <div className="flex flex-col items-center justify-around text-center h-5/6 dark:bg-neutral-800 bg-orange-100">
         <div className="flex flex-col justify-center h-4/5">
           {links.map((link) => (
             <MenuLink
@@ -51,7 +51,7 @@ const Menu = ({
             />
           ))}
         </div>
-        <div className="h-[1px] w-full bg-black"></div>
+        <div className="h-[1px] w-full dark:bg-white bg-black"></div>
 
         <div className="">
           <p>Want to Start a Project?</p>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion as m } from "framer-motion";
 
 type WorkProps = {
   name: string;
@@ -12,22 +13,56 @@ type WorkProps = {
 const Work = ({ name, date, imageUrl, websiteUrl }: WorkProps) => {
   return (
     <Link href={websiteUrl} passHref={true}>
-      <div className="w-full">
-        <div className={`relative h-[30vh] w-full -z-10`}>
-          <div className="w-1/2 relative top-1/3 left-[40%] h-full text-3xl text-white font-bold">
-            <p className=" ">{name}</p>
-            <p className="text-lg">{date}</p>
-          </div>
-          <Image
-            src={imageUrl}
-            fill={true}
-            alt={name}
-            className="object-center -z-10 filter brightness-50 w-full"
-          />
-        </div>
+      <m.div
+        whileInView={{ x: 0, opacity: 1 }}
+        animate={{ x: "100%", opacity: 0 }}
+        transition={{delay: 0.5, duration: 1}}
+        className="relative h-[40vh] w-[60vh] -z-10"
+      >
+        <Image
+          src={imageUrl}
+          fill={true}
+          alt={name}
+          className="filter grayscale brightness-90"
+        />
+      </m.div>
+      <div className="relative bottom-1/2 text-right mx-4 text-2xl text-white mix-blend-difference z-10">
+        <m.p
+          animate={{ y: 0, opacity: 0 }}
+          whileInView={{ y: "100%", opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          {name}
+        </m.p>
+        <m.p
+          animate={{ y: 0, opacity: 0 }}
+          whileInView={{ y: "100%", opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          {date}
+        </m.p>
       </div>
     </Link>
   );
 };
 
 export default Work;
+
+{
+  /* <m.p
+animate={{ y: "100%" }}
+whileInView={{ y: 0 }}
+transition={{ delay: 0.5, duration: 0.5 }}
+className=" "
+>
+{name}
+</m.p>
+<m.p
+animate={{ y: "100%" }}
+whileInView={{ y: 0 }}
+transition={{ delay: 0.75, duration: 0.5 }}
+className="text-lg"
+>
+{date}
+</m.p> */
+}
