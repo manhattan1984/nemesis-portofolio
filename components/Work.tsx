@@ -17,7 +17,7 @@ const Work = ({ name, date, imageUrl, websiteUrl }: WorkProps) => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={{ y: "100%", opacity: 0 }}
         transition={{delay: 0.5, duration: 1}}
-        className="relative h-[40vh] w-[60vh] -z-10"
+        className="relative h-[20vh] w-[70vw] -z-10 lg:h-[40vh] lg:w-[40vw]"
       >
         <Image
           src={imageUrl}
